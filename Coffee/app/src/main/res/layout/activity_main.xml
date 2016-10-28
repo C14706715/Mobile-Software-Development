@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.jake.coffee.MainActivity"
+    android:layout_width="450dp"
+    android:background="#776355">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="600dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/horizontalScrollView2"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="414dp">
+
+        <ImageButton
+            app:srcCompat="@drawable/tree"
+            android:id="@+id/Tree"
+            android:layout_height="47dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_width="110dp" />
+
+        <ImageButton
+            android:layout_width="103dp"
+            android:layout_height="47dp"
+            app:srcCompat="@drawable/harvest"
+            android:id="@+id/Harvest"
+            android:layout_below="@+id/horizontalScrollView2"
+            android:layout_toStartOf="@+id/Bagging"
+            android:layout_marginEnd="38dp"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:layout_width="105dp"
+            app:srcCompat="@drawable/drying"
+            android:id="@+id/Drying"
+            android:layout_height="47dp"
+            android:layout_weight="1"
+            android:layout_centerHorizontal="true" />
+
+        <ImageButton
+            android:layout_width="150dp"
+            app:srcCompat="@drawable/bagging"
+            android:id="@+id/Bagging"
+            android:layout_weight="1"
+            android:layout_height="47dp"
+            android:layout_marginEnd="48dp"
+            android:layout_below="@+id/horizontalScrollView2"
+            android:layout_alignParentEnd="true" />
+    </LinearLayout>
+
+    <ImageView
+        app:srcCompat="@drawable/tree"
+        android:id="@+id/LargeTree"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        android:layout_width="match_parent" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true">
+
+    </HorizontalScrollView>
+
+    <Button
+        android:text="Login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/LoginID"
+        android:layout_marginStart="22dp"
+        android:background="#09944c"
+        android:layout_alignBaseline="@+id/SignUpID"
+        android:layout_alignBottom="@+id/SignUpID"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="SignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/SignUpID"
+        android:layout_marginStart="109dp"
+        android:layout_marginTop="25dp"
+        android:background="#09944c"
+        android:layout_below="@+id/horizontalScrollView4"
+        android:layout_toEndOf="@+id/LoginID" />
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:srcCompat="@drawable/facebook"
+        android:id="@+id/FacebookID"
+        android:layout_marginBottom="75dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/MainLogoID" />
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:srcCompat="@drawable/instagram"
+        android:id="@+id/InstagramID"
+        android:layout_alignTop="@+id/FacebookID"
+        android:layout_alignStart="@+id/LoginID" />
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:srcCompat="@drawable/coffeebeanlogo"
+        android:id="@+id/MainLogoID"
+        android:layout_marginBottom="33dp"
+        android:layout_above="@+id/InstagramID"
+        android:layout_toEndOf="@+id/InstagramID" />
+
+
+</RelativeLayout>
