@@ -1,15 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_height="wrap_content"
-    android:layout_width="wrap_content"
-
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
     android:id="@+id/activity_signup_user"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.jake.coffee.SignUpUser"
-    android:background="#776355">
+    android:background="@drawable/coffee_b">
+
+    <Button
+        android:text="Login"
+        android:
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="41dp"
+        android:id="@+id/LoginBtnID"
+        android:layout_alignBaseline="@+id/SignUpBtnID"
+        android:layout_alignBottom="@+id/SignUpBtnID"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="Please fill in the following details:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/SignUpInfoID"
+        android:textColorLink="?android:attr/colorPressedHighlight"
+        android:textColor="@android:color/holo_orange_light"
+        tools:textSize="32sp"
+        tools:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:ems="10"
+        android:layout_marginTop="22dp"
+        android:id="@+id/NameID"
+        tools:textSize="36sp"
+        android:textColor="?android:attr/colorPrimaryDark"
+        tools:textStyle="bold"
+        android:layout_below="@+id/SignUpInfoID"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:text="Age"
+        android:ems="10"
+        android:id="@+id/AgeID"
+        android:layout_marginTop="10dp"
+        tools:textSize="36sp"
+        android:textColor="?android:attr/colorPrimaryDark"
+        tools:textStyle="bold"
+        android:layout_below="@+id/NameID"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/EmailID"
+        android:text="Email"
+        android:layout_marginTop="14dp"
+        tools:textSize="36sp"
+        android:textColor="?android:attr/colorPrimaryDark"
+        tools:textStyle="bold"
+        android:layout_below="@+id/AgeID"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:ems="10"
+        android:id="@+id/PasswordID"
+        android:text="Password"
+        tools:textSize="36sp"
+        android:textColor="?android:attr/colorPrimaryDark"
+        tools:textStyle="bold"
+        android:layout_below="@+id/EmailID"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="Sign Up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/SignUpBtnID"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="41dp" />
 </RelativeLayout>
