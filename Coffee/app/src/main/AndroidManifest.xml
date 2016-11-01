@@ -24,12 +24,11 @@
             android:name=".LoginUser"
             android:label="LoginUser"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".SignUpUser"
             android:label="@string/title_activity_sign_up_user"
-            android:theme="@style/AppTheme.NoActionBar"/>
-
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".start"></activity>
     </application>
 
 </manifest>
