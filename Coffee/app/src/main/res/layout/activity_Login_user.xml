@@ -19,18 +19,21 @@
         android:id="@+id/LoginBtnID"
         android:layout_marginBottom="81dp"
         android:layout_alignParentBottom="true"
+        android:background="#09944c"
         android:layout_centerHorizontal="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPassword"
+        android:inputType="text"
         android:ems="10"
         android:id="@+id/PasswordID"
-        android:hint="Password"
+        android:text="Password"
+        android:textColor="?android:attr/colorFocusedHighlight"
         android:layout_above="@+id/LoginBtnID"
         android:layout_alignStart="@+id/EmailId"
-        android:layout_marginBottom="49dp" />
+        android:layout_marginBottom="49dp"
+        android:textSize="26sp"/>
 
     <EditText
         android:layout_width="wrap_content"
@@ -38,10 +41,12 @@
         android:inputType="textEmailAddress"
         android:ems="10"
         android:id="@+id/EmailId"
-        android:hint="Email"
+        android:text="Email"
+        android:textColor="?android:attr/colorFocusedHighlight"
         android:layout_above="@+id/PasswordID"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="35dp" />
+        android:layout_marginBottom="35dp"
+        android:textSize="26sp" />
 
     <ImageView
         android:layout_width="150dp"

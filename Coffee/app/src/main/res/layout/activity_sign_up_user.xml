@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
@@ -9,44 +10,28 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.jake.coffee.SignUpUser"
-    android:background="@drawable/coffee_b">
+    android:background="#445577">
 
     <Button
         android:text="Login"
-        android:
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="41dp"
         android:id="@+id/LoginBtnID"
         android:layout_alignBaseline="@+id/SignUpBtnID"
         android:layout_alignBottom="@+id/SignUpBtnID"
+        android:background="#09944c"
         android:layout_alignParentEnd="true" />
 
-    <TextView
-        android:text="Please fill in the following details:"
+    <Button
+        android:text="Sign Up"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/SignUpInfoID"
-        android:textColorLink="?android:attr/colorPressedHighlight"
-        android:textColor="@android:color/holo_orange_light"
-        tools:textSize="32sp"
-        tools:textStyle="bold"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Name"
-        android:ems="10"
-        android:layout_marginTop="22dp"
-        android:id="@+id/NameID"
-        tools:textSize="36sp"
-        android:textColor="?android:attr/colorPrimaryDark"
-        tools:textStyle="bold"
-        android:layout_below="@+id/SignUpInfoID"
-        android:layout_alignParentStart="true" />
+        android:id="@+id/SignUpBtnID"
+        android:layout_alignParentBottom="true"
+        android:background="#09944c"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="41dp" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -55,25 +40,23 @@
         android:text="Age"
         android:ems="10"
         android:id="@+id/AgeID"
-        android:layout_marginTop="10dp"
         tools:textSize="36sp"
-        android:textColor="?android:attr/colorPrimaryDark"
+        android:textColor="?android:attr/colorFocusedHighlight"
         tools:textStyle="bold"
-        android:layout_below="@+id/NameID"
+        android:layout_above="@+id/EmailID"
         android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
+        android:inputType="textPersonName"
+        android:text="Name"
         android:ems="10"
-        android:id="@+id/EmailID"
-        android:text="Email"
-        android:layout_marginTop="14dp"
+        android:id="@+id/NameID"
         tools:textSize="36sp"
-        android:textColor="?android:attr/colorPrimaryDark"
+        android:textColor="?android:attr/colorFocusedHighlight"
         tools:textStyle="bold"
-        android:layout_below="@+id/AgeID"
+        android:layout_above="@+id/AgeID"
         android:layout_alignParentStart="true" />
 
     <EditText
@@ -84,17 +67,45 @@
         android:id="@+id/PasswordID"
         android:text="Password"
         tools:textSize="36sp"
-        android:textColor="?android:attr/colorPrimaryDark"
+        android:textColor="?android:attr/colorFocusedHighlight"
         tools:textStyle="bold"
-        android:layout_below="@+id/EmailID"
-        android:layout_alignParentStart="true" />
+        android:layout_above="@+id/LoginBtnID"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="26dp" />
 
-    <Button
-        android:text="Sign Up"
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/SignUpBtnID"
-        android:layout_alignParentBottom="true"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/EmailID"
+        android:text="Email"
+        tools:textSize="36sp"
+        android:textColor="?android:attr/colorFocusedHighlight"
+        tools:textStyle="bold"
+        android:layout_above="@+id/PasswordID"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="Please fill in the following details:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/SignUpInfoID"
+        android:textColorLink="?android:attr/colorPressedHighlight"
+        android:textColor="@android:color/holo_orange_light"
+        tools:textSize="32sp"
+        tools:textStyle="bold"
+        android:layout_above="@+id/AgeID"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="41dp" />
+        android:layout_marginBottom="51dp" />
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:srcCompat="@drawable/coffeebeanlogo"
+        android:id="@+id/SignUpLogoID"
+        android:layout_marginEnd="49dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignEnd="@+id/LoginBtnID"
+        android:layout_marginTop="30dp" />
 </RelativeLayout>
