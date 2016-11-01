@@ -21,13 +21,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".User"
-            android:label="@string/title_activity_user"
+            android:name=".LoginUser"
+            android:label="LoginUser"
             android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name=".SignUpUser"
             android:label="@string/title_activity_sign_up_user"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"/>
+
     </application>
 
 </manifest>
