@@ -1,5 +1,6 @@
 package com.example.jake.coffee;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +9,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.VideoView;
 
 import java.util.concurrent.TimeUnit;
 
@@ -15,6 +17,7 @@ public class TimerActivity extends AppCompatActivity {
     Button btnStart, btnStop, Go;
     TextView textViewTime;
     EditText TimeCalc;
+    VideoView Video;
     private long BrewTime;
     int UserGram;
     private CounterClass timer;
@@ -30,7 +33,10 @@ public class TimerActivity extends AppCompatActivity {
         textViewTime.setText("00:00:00");
         final EditText TimeCalc = (EditText) findViewById(R.id.TimeCalcID);
         Button Go = (Button) findViewById(R.id.GoID);
+        Video = (VideoView) findViewById(R.id.videoViewID);
+        //Video.setVideoPath(String.valueOf(R.raw.latte));
 
+        Video.setVideoURI(Uri.parse("android.resource://coffee/R.raw.latte"));
         Go.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,6 +59,7 @@ public class TimerActivity extends AppCompatActivity {
                 System.out.println("Brew Time: "+BrewTime);
                 timer = new CounterClass(BrewTime,1000);
                 timer.start();
+                Video.start();
             }
         });
 
@@ -72,7 +79,7 @@ public class TimerActivity extends AppCompatActivity {
 
         @Override
         public void onFinish() {
-            textViewTime.setText("Completed.");
+            textViewTime.setText("Brew Complete");
         }
 
         @Override

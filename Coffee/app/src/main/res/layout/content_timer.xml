@@ -5,15 +5,43 @@
     android:orientation="vertical" >
 
     <Button
+        android:text="Calculate!"
+        android:id="@+id/GoID"
+        android:layout_width="125dp"
+        android:layout_centerVertical="true"
+        android:layout_alignEnd="@+id/btnStop"
+        android:layout_height="50dp" />
+
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:inputType="time"
+        android:ems="10"
+        android:id="@+id/TimeCalcID"
+        android:layout_marginStart="39dp"
+        android:layout_alignBaseline="@+id/GoID"
+        android:layout_alignBottom="@+id/GoID"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/textViewTime"
+        android:layout_width="200dp"
+        android:textSize="25sp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/btnStop"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="19dp" />
+
+    <Button
         android:id="@+id/btnStop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="67dp"
         android:text="Stop"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="40dp"
-        android:layout_marginTop="152dp" />
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="45dp"
+        android:layout_above="@+id/GoID"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:id="@+id/btnStart"
@@ -21,35 +49,15 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="28dp"
         android:text="Start"
-        android:layout_marginStart="50dp"
-        android:layout_alignBaseline="@+id/btnStop"
-        android:layout_alignBottom="@+id/btnStop"
-        android:layout_alignParentStart="true" />
+        android:layout_above="@+id/btnStop"
+        android:layout_alignEnd="@+id/btnStop" />
 
-    <TextView
-        android:id="@+id/textViewTime"
+    <VideoView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="25sp"
-        android:layout_above="@+id/btnStart"
-        android:layout_alignEnd="@+id/btnStart"
-        android:layout_marginBottom="49dp" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="time"
-        android:ems="10"
-        android:id="@+id/TimeCalcID"
-        android:layout_centerVertical="true"
-        android:layout_alignStart="@+id/btnStart" />
-
-    <Button
-        android:text="Calculate!"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_toEndOf="@+id/TimeCalcID"
-        android:id="@+id/GoID" />
+        android:layout_height="200dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="43dp"
+        android:id="@+id/videoViewID" />
 
 </RelativeLayout>
