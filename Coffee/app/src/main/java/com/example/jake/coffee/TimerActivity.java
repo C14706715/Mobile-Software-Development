@@ -15,7 +15,9 @@ public class TimerActivity extends AppCompatActivity {
     Button btnStart, btnStop, Go;
     TextView textViewTime;
     EditText TimeCalc;
-
+    private long BrewTime;
+    int UserGram;
+    private CounterClass timer;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -25,24 +27,31 @@ public class TimerActivity extends AppCompatActivity {
         btnStart = (Button)findViewById(R.id.btnStart);
         btnStop = (Button)findViewById(R.id.btnStop);
         textViewTime  = (TextView)findViewById(R.id.textViewTime);
-        textViewTime.setText("00:03:00");
+        textViewTime.setText("00:00:00");
         final EditText TimeCalc = (EditText) findViewById(R.id.TimeCalcID);
         Button Go = (Button) findViewById(R.id.GoID);
 
         Go.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Integer Storing = Integer.parseInt(TimeCalc.getText().toString());
-                System.out.println(Storing);
-                double Final = Storing*4.8;
-                System.out.println(Final);
+                UserGram = Integer.parseInt(TimeCalc.getText().toString());
+                double FinalTime = UserGram * 4.8;
+
+                Integer Seconds = (int) FinalTime % 60;
+                Integer Minutes = (int) FinalTime / 60;
+                String Time = Minutes + ":" + Seconds;
+                System.out.println(Time);
+
             }
         });
 
-        final CounterClass timer = new CounterClass(180000,1000);
+
         btnStart.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+                BrewTime = (int) ((UserGram * 4.8) * 1000);
+                System.out.println("Brew Time: "+BrewTime);
+                timer = new CounterClass(BrewTime,1000);
                 timer.start();
             }
         });
