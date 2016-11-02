@@ -16,4 +16,5 @@
     </string>
     <string name="title_activity_user">User</string>
     <string name="title_activity_sign_up_user">SignUpUser</string>
+    <string name="title_activity_timer">TimerActivity</string>
 </resources>

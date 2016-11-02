@@ -10,4 +10,33 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.jake.coffee.start">
 
+    <Button
+        android:text="Coffee Timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="73dp"
+        android:background="#09944c"
+        android:id="@+id/TimerBtnID" />
+
+    <Button
+        android:text="Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TimerBtnID"
+        android:layout_alignStart="@+id/TimerBtnID"
+        android:layout_marginTop="63dp"
+        android:background="#09944c"
+        android:id="@+id/button2" />
+
+    <Button
+        android:text="Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button2"
+        android:layout_alignStart="@+id/button2"
+        android:layout_marginTop="73dp"
+        android:background="#09944c"
+        android:id="@+id/button3" />
 </RelativeLayout>

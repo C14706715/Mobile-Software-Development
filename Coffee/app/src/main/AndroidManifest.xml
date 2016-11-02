@@ -28,7 +28,11 @@
             android:name=".SignUpUser"
             android:label="@string/title_activity_sign_up_user"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".start"></activity>
+        <activity android:name=".start" />
+        <activity
+            android:name=".TimerActivity"
+            android:label="@string/title_activity_timer"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
