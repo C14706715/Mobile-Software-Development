@@ -32,8 +32,10 @@ public class TimerActivity extends AppCompatActivity {
         Go.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                String Store = TimeCalc.getText().toString();
-                System.out.println(Store);
+                Integer Storing = Integer.parseInt(TimeCalc.getText().toString());
+                System.out.println(Storing);
+                double Final = Storing*4.8;
+                System.out.println(Final);
             }
         });
 
