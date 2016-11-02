@@ -18,7 +18,7 @@ public class LoginUser extends AppCompatActivity {
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LoginUser.this, start.class));
+                startActivity(new Intent(LoginUser.this, StartActivity.class));
             }
         });
 
