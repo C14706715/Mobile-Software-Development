@@ -6,13 +6,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.concurrent.TimeUnit;
 
 public class TimerActivity extends AppCompatActivity {
-    Button btnStart, btnStop;
+    Button btnStart, btnStop, Go;
     TextView textViewTime;
+    EditText TimeCalc;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -23,6 +26,16 @@ public class TimerActivity extends AppCompatActivity {
         btnStop = (Button)findViewById(R.id.btnStop);
         textViewTime  = (TextView)findViewById(R.id.textViewTime);
         textViewTime.setText("00:03:00");
+        final EditText TimeCalc = (EditText) findViewById(R.id.TimeCalcID);
+        Button Go = (Button) findViewById(R.id.GoID);
+
+        Go.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String Store = TimeCalc.getText().toString();
+                System.out.println(Store);
+            }
+        });
 
         final CounterClass timer = new CounterClass(180000,1000);
         btnStart.setOnClickListener(new OnClickListener() {
