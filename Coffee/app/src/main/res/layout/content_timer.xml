@@ -40,7 +40,7 @@
 
     <EditText
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
+        android:inputType="text"
         android:text="Grams"
         android:ems="10"
         android:textColor="@android:color/holo_orange_light"
@@ -49,6 +49,17 @@
         android:layout_alignBottom="@+id/CalculateID"
         android:layout_toEndOf="@+id/btnStart"
         android:layout_width="65dp" />
+
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:inputType="time"
+        android:ems="10"
+        android:textColor="@android:color/holo_orange_light"
+        android:id="@+id/TimeCalcID"
+        android:layout_marginStart="19dp"
+        android:layout_alignBottom="@+id/GramsID"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:text="Calculate!"
@@ -68,4 +79,21 @@
         android:layout_height="50dp"
         android:layout_above="@+id/btnStop"
         android:layout_alignEnd="@+id/CalculateID" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:text="Number of Grams:"
+        android:ems="10"
+        android:textColor="@android:color/holo_orange_light"
+        android:id="@+id/QuestionID"
+        tools:textSize="30sp"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:textSize="30sp"
+        android:layout_marginBottom="17dp"
+        android:layout_above="@+id/TimeCalcID"
+        android:layout_alignParentEnd="true" />
+
+
 </RelativeLayout>

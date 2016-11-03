@@ -1,5 +1,6 @@
 package com.example.jake.coffee;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.VideoView;
 
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 //This TimerActivity Displays the Timer Page and it's variables
 public class TimerActivity extends AppCompatActivity {
@@ -18,6 +20,7 @@ public class TimerActivity extends AppCompatActivity {
     TextView Time;
     EditText TimeCalc;
     VideoView Video;
+    Random random;
     private long BrewTime;
     int UserGram;
     private CounterClass timer;
@@ -33,6 +36,7 @@ public class TimerActivity extends AppCompatActivity {
         TimeCalc = (EditText) findViewById(R.id.TimeCalcID);
         Calculate = (Button) findViewById(R.id.CalculateID);
         Video = (VideoView) findViewById(R.id.videoViewID);
+        random= new Random();
 
         //Stating Timer display
         Time.setText("00:00");
@@ -106,6 +110,10 @@ public class TimerActivity extends AppCompatActivity {
 
             System.out.println(hms);
             Time.setText(hms);
+
+            //This small code changes the Timer to different colours every seconds to make it stand out
+            int colour = Color.argb(255, random.nextInt(255), random.nextInt(255), random.nextInt(255));
+            Time.setTextColor(colour);
         }
     }
 }
