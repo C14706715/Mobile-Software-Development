@@ -17,4 +17,11 @@
     <string name="title_activity_user">User</string>
     <string name="title_activity_sign_up_user">SignUpUser</string>
     <string name="title_activity_timer">TimerActivity</string>
+
+    <string-array id="ButtonListID" name="ButtonList">
+        <item>Timer</item>
+        <item>Mapping</item>
+    </string-array>
+
+
 </resources>
