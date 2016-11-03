@@ -54,7 +54,6 @@
         android:text="Calculate!"
         android:id="@+id/CalculateID"
         android:layout_width="125dp"
-        android:textColor="@android:color/holo_orange_light"
         android:layout_height="50dp"
         android:layout_marginBottom="14dp"
         android:layout_above="@+id/textViewTime"
@@ -69,6 +68,4 @@
         android:layout_height="50dp"
         android:layout_above="@+id/btnStop"
         android:layout_alignEnd="@+id/CalculateID" />
-
-
 </RelativeLayout>
