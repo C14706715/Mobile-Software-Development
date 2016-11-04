@@ -18,7 +18,7 @@ public class StartActivity extends AppCompatActivity {
 
         //Create and array with Page names
         String[] myStringArray={
-                "Home", "Timer", "Mapping"
+                "Home", "Timer", "Nearest Coffee Shop"
         };
     
         //An adapter is created in order to use listView
@@ -41,7 +41,7 @@ public class StartActivity extends AppCompatActivity {
                         intent = new Intent (StartActivity.this, TimerActivity.class);
                         break;
                     case 2:
-                        intent= new Intent (StartActivity.this, LoginUser.class);
+                        intent= new Intent (StartActivity.this, MapsActivity.class);
                         break;
                 }
                 startActivity(intent);
