@@ -1,24 +1,22 @@
 package com.example.jake.coffee;
 
-
 import android.content.Intent;
 import android.net.Uri;
-import android.os.CountDownTimer;
+import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Gallery;
 import android.widget.ImageView;
 
+//This is the main Activity page it is the first screen in which the user will see.
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        //An array of images used to flow through different images as seen
         final int[] imageArray = {
                 R.drawable.tree,
                 R.drawable.bagging,
@@ -28,14 +26,22 @@ public class MainActivity extends AppCompatActivity {
                 R.drawable.harvest
         };
 
-        Button Login = (Button) findViewById(R.id.LoginID);
-        Button SignUp = (Button) findViewById(R.id.SignUpID);
-        ImageView Facebook = (ImageView) findViewById(R.id.FacebookID);
-        ImageView Instagram = (ImageView) findViewById(R.id.InstagramID);
-        final ImageView GalleryImages = (ImageView) findViewById(R.id.HarvestID);
+        //Declared variables
+        Button Login, SignUp;
 
-        final Handler handler = new Handler();
-        Runnable runnable = new Runnable() {
+        //Declared as final as they are used within inner classes
+        final ImageView Facebook, Instagram, GalleryImages;
+        final Handler handler;
+        final Runnable runnable;
+
+        //Initialised variables
+        Login = (Button) findViewById(R.id.LoginID);
+        SignUp = (Button) findViewById(R.id.SignUpID);
+        Facebook = (ImageView) findViewById(R.id.FacebookID);
+        Instagram = (ImageView) findViewById(R.id.InstagramID);
+        GalleryImages = (ImageView) findViewById(R.id.HarvestID);
+        handler = new Handler();
+        runnable = new Runnable() {
             int i=0;
             public void run() {
                 GalleryImages.setImageResource(imageArray[i]);
@@ -49,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         };
         handler.postDelayed(runnable, 2000); //for initial delay..
 
-
+        //Listeners for each button or image on screen
         Login.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -69,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
         Instagram.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Uri used to connect to the website
                 Uri uri = Uri.parse("http://www.instagram.com");
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
@@ -83,10 +90,5 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
-
-
     }
-
 }

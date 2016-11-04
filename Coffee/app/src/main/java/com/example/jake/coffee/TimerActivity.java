@@ -36,15 +36,13 @@ public class TimerActivity extends AppCompatActivity {
         TimeCalc = (EditText) findViewById(R.id.TimeCalcID);
         Calculate = (Button) findViewById(R.id.CalculateID);
         Video = (VideoView) findViewById(R.id.videoViewID);
-        random= new Random();
+        random = new Random();
 
         //Stating Timer display
         Time.setText("00:00");
 
         //This is the path to the Video I publish on my Google+ account
         Video.setVideoPath("https://r15---sn-5hnednes.googlevideo.com/videoplayback?id=faf0fb5f986b01af&itag=15&source=picasa&begin=0&requiressl=yes&pl=24&sc=yes&mime=video/mp4&lmt=1478187732497550&ip=178.167.255.29&ipbits=8&expire=1478216568&sparams=expire,id,ip,ipbits,itag,lmt,mime,mm,mn,ms,mv,nh,pl,requiressl,sc,source&signature=4B17312A5A9D8AEA37242E95F77653D407551614.71A1D3F302AA3E04D06F0D826505EC8306A38444&key=cms1&cpn=Jm2I73HxUu3_9MMe&c=WEB&cver=1.20161101&redirect_counter=1&cm2rm=sn-q0cz7z&req_id=2d5030853d0fa3ee&cms_redirect=yes&mm=34&mn=sn-5hnednes&ms=ltu&mt=1478187745&mv=m&nh=IgpwcjAxLmR1YjA2KgkxMjcuMC4wLjE");
-
-
         Calculate.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {

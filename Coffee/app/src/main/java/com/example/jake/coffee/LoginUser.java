@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-
+//This Activity deals with the simp[le login page. It simply has one button on the page
 public class LoginUser extends AppCompatActivity {
 
     @Override
