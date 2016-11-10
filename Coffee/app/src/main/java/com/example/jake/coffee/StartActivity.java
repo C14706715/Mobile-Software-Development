@@ -41,7 +41,7 @@ public class StartActivity extends AppCompatActivity {
                         intent = new Intent (StartActivity.this, TimerActivity.class);
                         break;
                     case 2:
-                        intent= new Intent (StartActivity.this, MapsActivity.class);
+                        //intent= new Intent (StartActivity.this, MapsActivity.class);
                         break;
                 }
                 startActivity(intent);
