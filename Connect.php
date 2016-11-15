@@ -12,5 +12,13 @@
 	$Name = $_POST['Name'];
 	$Email = $_POST['Email'];
 	$Password = $_POST['Password'];
-
+	
+	$sql = "insert into Person(Name, Email, Password) values ('$Name', '$Email', '$Password')";
+	if(mysqli_query($con, $sql)){
+		echo 'Insertion Successful';
+	}
+	else{
+		echo 'Insertion Failure';
+	}
+	mysqli_close($con);
 ?>
