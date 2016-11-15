@@ -31,6 +31,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+//This code is referenced from Tutorial Point
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback,
         GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener,
@@ -94,13 +95,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         Button btnRestaurant = (Button) findViewById(R.id.CoffeeBtn);
         btnRestaurant.setOnClickListener(new View.OnClickListener() {
-            String Restaurant = "restaurant";
+            String coffeeShop = "Coffee";
 
             @Override
             public void onClick(View v) {
                 Log.d("onClick", "Button is Clicked");
                 mMap.clear();
-                String url = getUrl(mLastLocation.getLatitude(), mLastLocation.getLongitude(), Restaurant);
+                String url = getUrl(mLastLocation.getLatitude(), mLastLocation.getLongitude(), coffeeShop);
                 Object[] DataTransfer = new Object[2];
                 DataTransfer[0] = mMap;
                 DataTransfer[1] = url;
@@ -125,27 +126,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
 
-
-    /*public void onMapSearch(View view) {
-       // EditText locationSearch = (EditText) findViewById(R.id.Location);
-       // String location = locationSearch.getText().toString();
-        List<android.location.Address> addressList = null;
-
-        if (location != null || !location.equals("")) {
-            Geocoder geocoder = new Geocoder(this);
-            try {
-                addressList = geocoder.getFromLocationName(location, 1);
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            android.location.Address address = addressList.get(0);
-            LatLng latLng = new LatLng(address.getLatitude(), address.getLongitude());
-            mMap.addMarker(new MarkerOptions().position(latLng).title("Marker"));
-            mMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
-        }
-    }*/
-
     protected synchronized void buildGoogleApiClient() {
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addConnectionCallbacks(this)
@@ -167,12 +147,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 == PackageManager.PERMISSION_GRANTED) {
             LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient, mLocationRequest, this);
         }
-
     }
 
     @Override
     public void onConnectionSuspended(int i) {
-
     }
 
     @Override

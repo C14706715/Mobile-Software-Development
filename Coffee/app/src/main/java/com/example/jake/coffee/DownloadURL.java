@@ -10,6 +10,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+//This code is referenced from Tutorial Point
 
 public class DownloadUrl {
 
