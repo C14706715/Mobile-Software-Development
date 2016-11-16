@@ -8,7 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
+import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -24,27 +26,20 @@ public class SignUpUser extends AppCompatActivity {
 
         final Button Login = (Button) findViewById(R.id.LoginBtnID);
         final Button SignUp = (Button) findViewById(R.id.SignUpBtnID);
-        final EditText RName = (EditText) findViewById(R.id.NameID);
-        final EditText RAge = (EditText) findViewById(R.id.AgeID);
-        final EditText RUsername = (EditText) findViewById(R.id.EmailID);
-        final EditText RPassword = (EditText) findViewById(R.id.PasswordID);
-
-        Login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(SignUpUser.this, LoginUser.class));
-            }
-        });
+        final EditText etName = (EditText) findViewById(R.id.NameID);
+        final EditText etAge = (EditText) findViewById(R.id.AgeID);
+        final EditText etEmail = (EditText) findViewById(R.id.EmailID);
+        final EditText etPassword = (EditText) findViewById(R.id.PasswordID);
 
         SignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String Name = RName.getText().toString();
-                final int Age = Integer.parseInt(RAge.getText().toString());
-                final String Username = RUsername.getText().toString();
-                final String Password = RPassword.getText().toString();
-
+                final String Name = etName.getText().toString();
+                final int Age = Integer.parseInt(etAge.getText().toString());
+                final String Email = etEmail.getText().toString();
+                final String Password = etPassword.getText().toString();
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
+
                     @Override
                     public void onResponse(String response) {
                         try {
@@ -57,14 +52,19 @@ public class SignUpUser extends AppCompatActivity {
                             }
                             else{
                                 AlertDialog.Builder builder = new AlertDialog.Builder(SignUpUser.this);
-                                builder.setMessage("Sorry Register Failed").setNegativeButton("Retry", null).create().show();
+                                builder.setMessage("Sorry Register Failed")
+                                        .setNegativeButton("Retry", null)
+                                        .create()
+                                        .show();
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
                     }
                 };
-
+                RegisterRequest registerRequest = new RegisterRequest(Name, Email, Age, Password, responseListener);
+                RequestQueue queue = Volley.newRequestQueue(SignUpUser.this);
+                queue.add(registerRequest);
             }
         });
     }
