@@ -3,10 +3,13 @@ package com.example.jake.coffee;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.toolbox.StringRequest;
-
 import java.util.HashMap;
 import java.util.Map;
 
+/*
+    Reference:
+    Parts of this code is from TutorialPoint
+ */
 public class LoginRequest extends StringRequest{
     private static final String Login_Request_URL ="http://c14706715.96.lt/login.php";
     private Map<String, String> params;
@@ -14,6 +17,7 @@ public class LoginRequest extends StringRequest{
     public LoginRequest(String username, String password, Response.Listener<String> listener) {
         super(Request.Method.POST, Login_Request_URL, listener, null);
         params = new HashMap<>();
+        //Username and password only needed for login page
         params.put("username", username);
         params.put("password", password);
     }
