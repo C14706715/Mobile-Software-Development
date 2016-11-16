@@ -12,16 +12,6 @@
     tools:context="com.example.jake.coffee.LoginUser"
     android:background="@drawable/coffee_background">
 
-    <Button
-        android:text="Login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/LoginBtnID"
-        android:layout_marginBottom="81dp"
-        android:layout_alignParentBottom="true"
-        android:background="#09944c"
-        android:layout_centerHorizontal="true" />
-
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -56,4 +46,23 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="45dp" />
+
+    <Button
+        android:text="Login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/LoginBtnID"
+        android:layout_marginBottom="83dp"
+        android:background="#09944c"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/PasswordID" />
+
+    <Button
+        android:text="Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/RegisterBtnID"
+        android:layout_below="@+id/PasswordID"
+        android:layout_alignEnd="@+id/PasswordID"
+        android:layout_marginEnd="10dp" />
 </RelativeLayout>
