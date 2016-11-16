@@ -11,10 +11,10 @@ public class LoginRequest extends StringRequest{
     private static final String Login_Request_URL ="http://c14706715.96.lt/login.php";
     private Map<String, String> params;
 
-    public LoginRequest(String email, String password, Response.Listener<String> listener) {
+    public LoginRequest(String username, String password, Response.Listener<String> listener) {
         super(Request.Method.POST, Login_Request_URL, listener, null);
         params = new HashMap<>();
-        params.put("email", email);
+        params.put("username", username);
         params.put("password", password);
     }
 

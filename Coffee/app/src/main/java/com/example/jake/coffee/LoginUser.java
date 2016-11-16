@@ -15,14 +15,15 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-//This Activity deals with the simp[le login page. It simply has one button on the page
+//This Activity deals with the simple login page. It simply has one button on the page
 public class LoginUser extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_user);
 
-        final EditText etEmail = (EditText) findViewById(R.id.EmailID);
+        final EditText etUsername = (EditText) findViewById(R.id.UsernameID);
         final EditText etPassword = (EditText) findViewById(R.id.PasswordID);
         final Button Register = (Button) findViewById(R.id.RegisterBtnID);
         final Button Login = (Button) findViewById(R.id.LoginBtnID);
@@ -38,7 +39,7 @@ public class LoginUser extends AppCompatActivity {
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String email = etEmail.getText().toString();
+                final String username = etUsername.getText().toString();
                 final String password = etPassword.getText().toString();
 
                 Response.Listener<String> responseListener = new Response.Listener<String>(){
@@ -54,7 +55,7 @@ public class LoginUser extends AppCompatActivity {
 
                                 Intent intent = new Intent(LoginUser.this, StartActivity.class);
                                 intent.putExtra("name", name);
-                                intent.putExtra("email", email);
+                                intent.putExtra("username", username);
                                 intent.putExtra("age", age);
 
                                 LoginUser.this.startActivity(intent);
@@ -72,7 +73,7 @@ public class LoginUser extends AppCompatActivity {
                     }
                 };
 
-                LoginRequest loginRequest = new LoginRequest(email, password, responseListener);
+                LoginRequest loginRequest = new LoginRequest(username, password, responseListener);
                 RequestQueue queue = Volley.newRequestQueue(LoginUser.this);
                 queue.add(loginRequest);
             }

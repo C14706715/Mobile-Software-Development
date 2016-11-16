@@ -24,20 +24,20 @@ public class SignUpUser extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up_user);
 
-        final Button Login = (Button) findViewById(R.id.LoginBtnID);
-        final Button SignUp = (Button) findViewById(R.id.SignUpBtnID);
         final EditText etName = (EditText) findViewById(R.id.NameID);
         final EditText etAge = (EditText) findViewById(R.id.AgeID);
-        final EditText etEmail = (EditText) findViewById(R.id.EmailID);
+        final EditText etUsername = (EditText) findViewById(R.id.UsernameID);
         final EditText etPassword = (EditText) findViewById(R.id.PasswordID);
+        final Button Login = (Button) findViewById(R.id.LoginBtnID);
+        final Button SignUp = (Button) findViewById(R.id.SignUpBtnID);
 
         SignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String Name = etName.getText().toString();
-                final int Age = Integer.parseInt(etAge.getText().toString());
-                final String Email = etEmail.getText().toString();
-                final String Password = etPassword.getText().toString();
+                final String name = etName.getText().toString();
+                final int age = Integer.parseInt(etAge.getText().toString());
+                final String username = etUsername.getText().toString();
+                final String password = etPassword.getText().toString();
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
 
                     @Override
@@ -62,7 +62,7 @@ public class SignUpUser extends AppCompatActivity {
                         }
                     }
                 };
-                RegisterRequest registerRequest = new RegisterRequest(Name, Email, Age, Password, responseListener);
+                RegisterRequest registerRequest = new RegisterRequest(name, username, age, password, responseListener);
                 RequestQueue queue = Volley.newRequestQueue(SignUpUser.this);
                 queue.add(registerRequest);
             }

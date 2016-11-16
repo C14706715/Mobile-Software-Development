@@ -15,28 +15,28 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="text"
+        android:inputType="text|textPassword"
         android:ems="10"
         android:id="@+id/PasswordID"
-        android:text="Password"
         android:textColor="?android:attr/colorFocusedHighlight"
         android:layout_above="@+id/LoginBtnID"
-        android:layout_alignStart="@+id/EmailId"
+        android:layout_alignStart="@+id/UsernameId"
         android:layout_marginBottom="49dp"
-        android:textSize="26sp"/>
+        android:textSize="26sp"
+        android:hint="Password" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
+        android:inputType="text"
         android:ems="10"
-        android:id="@+id/EmailId"
-        android:text="Email"
+        android:id="@+id/UsernameId"
         android:textColor="?android:attr/colorFocusedHighlight"
         android:layout_above="@+id/PasswordID"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="35dp"
-        android:textSize="26sp" />
+        android:textSize="26sp"
+        android:hint="Email" />
 
     <ImageView
         android:layout_width="150dp"
@@ -58,11 +58,10 @@
         android:layout_alignStart="@+id/PasswordID" />
 
     <Button
-        android:text="Button"
+        android:text="Register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/RegisterBtnID"
         android:layout_below="@+id/PasswordID"
-        android:layout_alignEnd="@+id/PasswordID"
-        android:layout_marginEnd="10dp" />
+        android:layout_alignEnd="@+id/PasswordID" />
 </RelativeLayout>
