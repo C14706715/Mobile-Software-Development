@@ -20,7 +20,7 @@
         android:id="@+id/PasswordID"
         android:textColor="?android:attr/colorFocusedHighlight"
         android:layout_above="@+id/LoginBtnID"
-        android:layout_alignStart="@+id/UsernameId"
+        android:layout_alignStart="@+id/UsernameID"
         android:layout_marginBottom="49dp"
         android:textSize="26sp"
         android:hint="Password" />
@@ -30,13 +30,13 @@
         android:layout_height="wrap_content"
         android:inputType="text"
         android:ems="10"
-        android:id="@+id/UsernameId"
+        android:id="@+id/UsernameID"
         android:textColor="?android:attr/colorFocusedHighlight"
         android:layout_above="@+id/PasswordID"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="35dp"
         android:textSize="26sp"
-        android:hint="Email" />
+        android:hint="Username" />
 
     <ImageView
         android:layout_width="150dp"
@@ -63,5 +63,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/RegisterBtnID"
         android:layout_below="@+id/PasswordID"
-        android:layout_alignEnd="@+id/PasswordID" />
+        android:layout_alignEnd="@+id/PasswordID"
+        android:background="#09944c" />
 </RelativeLayout>

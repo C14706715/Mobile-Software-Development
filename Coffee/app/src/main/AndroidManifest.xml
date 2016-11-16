@@ -51,7 +51,7 @@
             android:label="TimerActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".StartActivity"
+            android:name=".ListActivity"
             android:label="StartActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <!--

@@ -9,7 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 //This activity deals with the list page. It lists the pages you can navigate to
-public class StartActivity extends AppCompatActivity {
+public class ListActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,13 +35,13 @@ public class StartActivity extends AppCompatActivity {
                 Intent intent = null;
                 switch(position){
                     case 0:
-                        intent = new Intent( StartActivity.this, MainActivity.class);
+                        intent = new Intent( ListActivity.this, MainActivity.class);
                         break;
                     case 1:
-                        intent = new Intent (StartActivity.this, TimerActivity.class);
+                        intent = new Intent (ListActivity.this, TimerActivity.class);
                         break;
                     case 2:
-                        intent= new Intent (StartActivity.this, MapsActivity.class);
+                        intent= new Intent (ListActivity.this, MapsActivity.class);
                         break;
                 }
                 startActivity(intent);
