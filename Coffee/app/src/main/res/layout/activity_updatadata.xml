@@ -13,24 +13,44 @@
         android:id="@+id/editTextName"
         android:hint="Name" />
 
+    <Button
+        android:text="Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/updateBtn"
+        android:layout_marginTop="23dp"
+        android:layout_below="@+id/editTextPassword"
+        android:layout_alignStart="@+id/editTextPassword"
+        android:layout_marginStart="13dp" />
+
+    <EditText
+        android:layout_height="50dp"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:ems="10"
+        android:layout_below="@+id/editTextUsername"
+        android:layout_alignParentStart="true"
+        android:id="@+id/editTextAge"
+        android:layout_width="200dp" />
+
     <EditText
         android:layout_width="200dp"
         android:layout_height="50dp"
         android:inputType="textPersonName"
         android:ems="10"
         android:id="@+id/editTextPassword"
-        android:layout_below="@+id/editTextName"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="25dp"
-        android:hint="Password" />
+        android:hint="Password"
+        android:layout_below="@+id/editTextAge"
+        android:layout_alignParentStart="true" />
 
-    <Button
-        android:text="Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="75dp"
-        android:id="@+id/updateBtn"
-        android:layout_below="@+id/editTextPassword"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="20dp" />
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:ems="10"
+        android:id="@+id/editTextUsername"
+        android:layout_below="@+id/editTextName"
+        android:layout_alignParentStart="true" />
+
 </RelativeLayout>

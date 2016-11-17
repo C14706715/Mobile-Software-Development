@@ -16,72 +16,65 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+
 public class UpdateData extends AppCompatActivity {
 
-
-    EditText etName, etPassword;
-    Button UpdateBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_getdata);
 
-        etName = (EditText) findViewById(R.id.editTextName);
-        etPassword = (EditText) findViewById(R.id.editTextPassword);
+        final EditText Name = (EditText) findViewById(R.id.editTextName);
+        final EditText Username = (EditText) findViewById(R.id.editTextUsername);
+        final EditText Age = (EditText) findViewById(R.id.editTextAge);
+        final EditText Password = (EditText) findViewById(R.id.editTextPassword);
+        final Button Update = (Button) findViewById(R.id.updateBtn);
 
-        UpdateBtn.setOnClickListener(new View.OnClickListener() {
-
+        Update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String NewName = etName.getText().toString();
-                final String NewPassword = etPassword.getText().toString();
+                final String NewName = Name.getText().toString();
+                final int NewAge = Integer.parseInt(Age.getText().toString());
+                final String NewUsername = Username.getText().toString();
+                final String NewPassword = Password.getText().toString();
 
                 //created a listener to listen if the user signed up successfully or not
-                Response.Listener<String> responseListener = new Response.Listener<String>() {
+                Response.Listener<String> responseListener1 = new Response.Listener<String>() {
 
                     @Override
                     public void onResponse(String response) {
                         //in a try catch to catch exception
                         try {
                             JSONObject jsonResponse = new JSONObject(response);
-                            boolean success = jsonResponse.getBoolean("success");
+                            boolean success = jsonResponse.getBoolean("Update Successful");
 
-                            if(success){
-
-                                String name= jsonResponse.getString("name");
-                                int age = jsonResponse.getInt("age");
-                                //open page
+                            if (success) {
+                                //open login page
                                 Intent intent = new Intent(UpdateData.this, ListActivity.class);
-                                intent.putExtra("name", NewName);
-                                intent.putExtra("password", NewPassword);
-
                                 UpdateData.this.startActivity(intent);
-                            }
-                            else{
+                            } else {
                                 //pop up box to inform user of failed registry
                                 AlertDialog.Builder builder = new AlertDialog.Builder(UpdateData.this);
-                                builder.setMessage("Updating Failed")
+                                builder.setMessage("Update Failed")
                                         .setNegativeButton("Retry", null)
                                         .create()
                                         .show();
                             }
-                        }
-                        catch (JSONException e) {
+                        } catch (JSONException e) {
                             e.printStackTrace();
                         }
+                        Intent intent = new Intent(UpdateData.this, ListActivity.class);
+                        UpdateData.this.startActivity(intent);
                     }
                 };
                 //Create a registerRequest child to send variables to the class
-                UpdateRequest updateRequest = new UpdateRequest(NewName, NewPassword, responseListener);
+                UpdateRequest registerRequest = new UpdateRequest(NewName, NewUsername, NewAge, NewPassword, responseListener1);
                 //I used volley as its a library which makes it easier to transport data through the app
                 RequestQueue queue = Volley.newRequestQueue(UpdateData.this);
-                queue.add(updateRequest);
+                queue.add(registerRequest);
             }
         });
-
-
-
-
     }
 }
+
