@@ -64,7 +64,7 @@ public class SignUpUser extends AppCompatActivity {
 
                             if(success){
                                 //open login page
-                                Intent intent = new Intent(SignUpUser.this, LoginUser.class);
+                                Intent intent = new Intent(SignUpUser.this, ListActivity.class);
                                 SignUpUser.this.startActivity(intent);
                             }
                             else{

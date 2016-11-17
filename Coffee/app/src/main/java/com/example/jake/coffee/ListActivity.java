@@ -75,7 +75,10 @@ public class ListActivity extends AppCompatActivity {
                         intent = new Intent(ListActivity.this, GetData.class);
                         break;
                     case 2:
-
+                        intent = new Intent(ListActivity.this, UpdateData.class);
+                        break;
+                    case 3:
+                        intent = new Intent(ListActivity.this, DeleteData.class);
                         break;
                 }
                 startActivity(intent);
