@@ -79,6 +79,8 @@ public class SignUpUser extends AppCompatActivity {
                         catch (JSONException e) {
                             e.printStackTrace();
                         }
+                        Intent intent = new Intent(SignUpUser.this, ListActivity.class);
+                        SignUpUser.this.startActivity(intent);
                     }
                 };
                 //Create a registerRequest child to send variables to the class
